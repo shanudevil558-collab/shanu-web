@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Shanu Web Studio - Modern websites for businesses, gamers, creators and brands.">
+<meta name="keywords" content="website design, web development, gaming website, business website, portfolio website">
+
+<title>Shanu Web Studio | Modern Websites</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#070707;
+    color:#fff;
+    line-height:1.6;
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(7,7,7,.95);
+    border-bottom:1px solid #222;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:800;
+    letter-spacing:.5px;
+}
+
+.logo span{
+    color:#00ff88;
+}
+
+nav{
+    display:flex;
+    gap:22px;
+}
+
+nav a{
+    color:#ddd;
+    text-decoration:none;
+    font-size:15px;
+}
+
+nav a:hover{
+    color:#00ff88;
+}
+
+.hero{
+    min-height:88vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:70px 20px;
+    background:
+    radial-gradient(circle at top,#123c2b 0,#070707 42%);
+}
+
+.badge{
+    display:inline-block;
+    border:1px solid #333;
+    background:#111;
+    padding:8px 16px;
+    border-radius:30px;
+    color:#00ff88;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(42px,8vw,82px);
+    line-height:1.05;
+    max-width:950px;
+    margin:auto;
+}
+
+.hero h1 span{
+    color:#00ff88;
+}
+
+.hero p{
+    max-width:650px;
+    margin:25px auto;
+    color:#aaa;
+    font-size:18px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 26px;
+    margin:7px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:700;
+    transition:.25s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.primary{
+    background:#00ff88;
+    color:#000;
+}
+
+.secondary{
+    border:1px solid #444;
+    color:#fff;
+    background:#111;
+}
+
+section{
+    padding:80px 7%;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.title h2{
+    font-size:38px;
+    margin-bottom:8px;
+}
+
+.title p{
+    color:#888;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#101010;
+    border:1px solid #242424;
+    border-radius:20px;
+    padding:28px;
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:#00ff88;
+}
+
+.card .icon{
+    font-size:35px;
+    margin-bottom:12px;
+}
+
+.card h3{
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#999;
+    font-size:15px;
+}
+
+.projects .card{
+    min-height:180px;
+}
+
+.price{
+    font-size:32px;
+    font-weight:800;
+    margin:12px 0;
+    color:#00ff88;
+}
+
+.price small{
+    color:#777;
+    font-size:14px;
+    font-weight:normal;
+}
+
+.features{
+    list-style:none;
+    margin:18px 0;
+    color:#aaa;
+}
+
+.features li{
+    margin:7px 0;
+}
+
+.about-box{
+    max-width:900px;
+    margin:auto;
+    background:#101010;
+    border:1px solid #222;
+    border-radius:22px;
+    padding:35px;
+    text-align:center;
+}
+
+.about-box p{
+    color:#aaa;
+}
+
+.faq{
+    max-width:850px;
+    margin:auto;
+}
+
+details{
+    background:#101010;
+    border:1px solid #242424;
+    border-radius:15px;
+    padding:18px 22px;
+    margin:12px 0;
+}
+
+summary{
+    cursor:pointer;
+    font-weight:700;
+}
+
+details p{
+    color:#999;
+    padding-top:12px;
+}
+
+.contact{
+    text-align:center;
+    background:#0b0b0b;
+}
+
+.contact-box{
+    max-width:750px;
+    margin:auto;
+}
+
+.contact-box p{
+    color:#999;
+    margin:15px auto 25px;
+}
+
+.socials{
+    margin-top:20px;
+}
+
+.socials a{
+    color:#aaa;
+    text-decoration:none;
+    margin:0 10px;
+}
+
+footer{
+    border-top:1px solid #222;
+    padding:30px 20px;
+    text-align:center;
+    color:#666;
+}
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:999;
+    background:#00ff88;
+    color:#000;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-size:25px;
+    font-weight:bold;
+    box-shadow:0 5px 25px #000;
+}
+
+@media(max-width:700px){
+
+    header{
+        padding:15px 5%;
+    }
+
+    nav{
+        display:none;
+    }
+
+    section{
+        padding:60px 5%;
+    }
+
+    .hero{
+        min-height:82vh;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .title h2{
+        font-size:30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        Shanu <span>Web Studio</span>
+    </div>
+
+    <nav>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div>
+
+        <div class="badge">
+            🚀 Websites For Businesses & Creators
+        </div>
+
+        <h1>
+            Build Your
+            <span>Digital Presence.</span>
+        </h1>
+
+        <p>
+            Modern, fast and mobile-friendly websites
+            for businesses, gamers, creators, brands and
+            personal projects.
+        </p>
+
+        <a class="btn primary" href="#contact">
+            Get Your Website
+        </a>
+
+        <a class="btn secondary" href="#projects">
+            View Demo Projects
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+    <div class="title">
+        <h2>What I Build</h2>
+        <p>Websites designed for different types of clients.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">🌐</div>
+            <h3>Business Websites</h3>
+            <p>Professional websites for companies and local businesses.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎮</div>
+            <h3>Gaming Websites</h3>
+            <p>Gaming profiles, esports teams, tournaments and gaming brands.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🛒</div>
+            <h3>Online Stores</h3>
+            <p>Modern product showcase and e-commerce style websites.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📱</div>
+            <h3>Portfolio Websites</h3>
+            <p>Personal portfolios for creators, developers and freelancers.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">⚡</div>
+            <h3>Fast Websites</h3>
+            <p>Lightweight websites designed for a smooth browsing experience.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📱</div>
+            <h3>Mobile Friendly</h3>
+            <p>Responsive layouts that work on phones, tablets and computers.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects" class="projects">
+
+    <div class="title">
+        <h2>Demo Projects</h2>
+        <p>Sample website concepts for different industries.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">🎮</div>
+            <h3>Gaming / Esports</h3>
+            <p>Gaming team, player profile or esports tournament website.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🔥</div>
+            <h3>Free Fire Community</h3>
+            <p>Gaming community, tournament and player showcase concept.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🍔</div>
+            <h3>Restaurant</h3>
+            <p>Menu, location, contact and food showcase website.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">☕</div>
+            <h3>Café</h3>
+            <p>Modern café website with menu and contact sections.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">💈</div>
+            <h3>Barber Shop</h3>
+            <p>Services, pricing, gallery and appointment contact.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">💇</div>
+            <h3>Salon</h3>
+            <p>Beauty salon services and booking information.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">👕</div>
+            <h3>Clothing Brand</h3>
+            <p>Fashion collection and product showcase.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🏋️</div>
+            <h3>Gym / Fitness</h3>
+            <p>Gym services, programs and membership information.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📚</div>
+            <h3>Academy</h3>
+            <p>Courses, teachers, admission and contact information.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🏢</div>
+            <h3>Real Estate</h3>
+            <p>Property listings and real estate business showcase.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📸</div>
+            <h3>Photography</h3>
+            <p>Photography portfolio and project gallery.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎵</div>
+            <h3>Music / Artist</h3>
+            <p>Artist profile, music projects and social links.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🚗</div>
+            <h3>Car Rental</h3>
+            <p>Vehicle showcase, rental information and contact.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🏨</div>
+            <h3>Hotel</h3>
+            <p>Rooms, facilities, location and booking information.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">💻</div>
+            <h3>Tech Company</h3>
+            <p>Modern technology company landing page.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🏪</div>
+            <h3>Local Shop</h3>
+            <p>Simple online presence for local shops.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🦷</div>
+            <h3>Clinic</h3>
+            <p>Doctor profile, services and appointment information.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🧑‍💼</div>
+            <h3>Company Profile</h3>
+            <p>Professional company introduction and services.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRICING -->
+
+<section id="pricing">
+
+    <div class="title">
+        <h2>Simple Pricing</h2>
+        <p>Starting packages — final price depends on requirements.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>Basic</h3>
+
+            <div class="price">
+                Rs 8,000+
+            </div>
+
+            <ul class="features">
+                <li>✓ Basic website</li>
+                <li>✓ Mobile responsive</li>
+                <li>✓ Contact section</li>
+                <li>✓ Basic customization</li>
+            </ul>
+
+            <a class="btn primary" href="#contact">
+                Get Started
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Professional</h3>
+
+            <div class="price">
+                Rs 15,000+
+            </div>
+
+            <ul class="features">
+                <li>✓ Professional design</li>
+                <li>✓ Multiple sections</li>
+                <li>✓ Mobile responsive</li>
+                <li>✓ Custom branding</li>
+                <li>✓ Contact integration</li>
+            </ul>
+
+            <a class="btn primary" href="#contact">
+                Get Started
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Custom</h3>
+
+            <div class="price">
+                Let's Talk
+            </div>
+
+            <ul class="features">
+                <li>✓ Custom design</li>
+                <li>✓ Advanced requirements</li>
+                <li>✓ Special features</li>
+                <li>✓ Business customization</li>
+            </ul>
+
+            <a class="btn primary" href="#contact">
+                Contact Me
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="title">
+        <h2>About Shanu Web Studio</h2>
+    </div>
+
+    <div class="about-box">
+
+        <p>
+            Shanu Web Studio creates modern and responsive
+            websites for businesses, gamers, creators and brands.
+            The goal is simple: build a clean online presence
+            that looks professional on both mobile and desktop.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section>
+
+    <div class="title">
+        <h2>FAQ</h2>
+        <p>Common questions.</p>
+    </div>
+
+    <div class="faq">
+
+        <details>
+            <summary>How can I order a website?</summary>
+            <p>
+                Contact me through WhatsApp and tell me about
+                your business and website requirements.
+            </p>
+        </details>
+
+        <details>
+            <summary>Can you make a website for my business?</summary>
+            <p>
+                Yes. Business websites can be customized according
+                to your business, services and branding.
+            </p>
+        </details>
+
+        <details>
+            <summary>Will the website work on mobile?</summary>
+            <p>
+                Yes. The websites are designed to be responsive
+                for phones, tablets and computers.
+            </p>
+        </details>
+
+        <details>
+            <summary>Can I request a custom design?</summary>
+            <p>
+                Yes. Custom designs and features can be discussed
+                before starting the project.
+            </p>
+        </details>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+    <div class="contact-box">
+
+        <div class="title">
+
+            <h2>Let's Build Something.</h2>
+
+            <p>
+                Need a website for your business, gaming project,
+                portfolio or brand?
+            </p>
+
+        </div>
+
+        <a
+            class="btn primary"
+            href="https://wa.me/923187695760"
+            target="_blank">
+            💬 Contact on WhatsApp
+        </a>
+
+        <div class="socials">
+
+            <a href="#" target="_blank">TikTok</a>
+            <a href="#" target="_blank">YouTube</a>
+            <a href="#" target="_blank">Instagram</a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FLOATING WHATSAPP -->
+
+<a
+    class="whatsapp"
+    href="https://wa.me/923187695760"
+    target="_blank"
+    aria-label="Contact on WhatsApp">
+    ☎
+</a>
+
+
+<footer>
+
+    © 2026 Shanu Web Studio.
+    All rights reserved.
+
+</footer>
+
+
+</body>
+</html>
